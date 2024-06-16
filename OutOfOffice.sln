@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice", "OutOfOffice\OutOfOffice.csproj", "{CAFA6DC4-17B8-4BA6-A4C5-022CD1D2AD63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice", "OutOfOffice\OutOfOffice.csproj", "{CAFA6DC4-17B8-4BA6-A4C5-022CD1D2AD63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.Entity", "Entity\OutOfOffice.Entity.csproj", "{A1DB18B7-3476-47F2-92D8-BA6CC4FEEC95}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.Entity", "Entity\OutOfOffice.Entity.csproj", "{A1DB18B7-3476-47F2-92D8-BA6CC4FEEC95}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.DAL", "OutOfOffice.DAL\OutOfOffice.DAL.csproj", "{DF09C26B-A45A-42FB-91B0-41D08D0A102F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.DAL", "OutOfOffice.DAL\OutOfOffice.DAL.csproj", "{DF09C26B-A45A-42FB-91B0-41D08D0A102F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.BLL", "OutOfOffice.BLL\OutOfOffice.BLL.csproj", "{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.BLL", "OutOfOffice.BLL\OutOfOffice.BLL.csproj", "{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.Common", "OutOfOffice.Common\OutOfOffice.Common.csproj", "{14F213DD-4444-4370-94F8-136231AC9A66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F213DD-4444-4370-94F8-136231AC9A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F213DD-4444-4370-94F8-136231AC9A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F213DD-4444-4370-94F8-136231AC9A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F213DD-4444-4370-94F8-136231AC9A66}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
