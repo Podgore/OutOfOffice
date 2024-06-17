@@ -12,6 +12,8 @@ using OutOfOffice.Common.Configs;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using OutOfOffice.Entity;
+using Microsoft.OpenApi.Any;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +32,7 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
 // Service
 builder.Services.AddScoped<IAuthService, AuthService>();
-
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
 // Identity
 builder.Services.AddIdentity<Employee, IdentityRole<Guid>>()
@@ -39,7 +41,33 @@ builder.Services.AddIdentity<Employee, IdentityRole<Guid>>()
     .AddTokenProvider<DataProtectorTokenProvider<Employee>>(TokenOptions.DefaultProvider);
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = "Standard Authorization header using the Bearer scheme. Example: \"bearer {token}\"",
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+        {
+            {
+                new OpenApiSecurityScheme
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Type = ReferenceType.SecurityScheme,
+                        Id = "Bearer"
+                    }
+                },
+                Array.Empty<string>()
+            }
+        }
+    );
+});
+
 
 //Validation
 var tokenValidationParameters = new TokenValidationParameters

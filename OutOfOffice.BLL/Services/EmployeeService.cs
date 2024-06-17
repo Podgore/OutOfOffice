@@ -1,18 +1,39 @@
-﻿using OutOfOffice.BLL.Services.Interfaces;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using OutOfOffice.BLL.Services.Interfaces;
 using OutOfOffice.Common.DTOs.Employee;
+using OutOfOffice.DAL.Repositories.Interfaces;
+using OutOfOffice.Entity;
+using System.Data.Entity;
 
 namespace OutOfOffice.BLL.Services
 {
-    public class EmployeeService : IEmployeeSevice
+    public class EmployeeService : IEmployeeService
     {
-        public Task<List<EmployeeDTO>> GetAllEmployees()
-        {
-            throw new NotImplementedException();
+        private readonly UserManager<Employee> _userManager;
+        private readonly IRepository<Employee> _userRepository;
+        private readonly IMapper _mapper;
+
+        public EmployeeService(UserManager<Employee> userManager, IRepository<Employee> userRepository, IMapper mapper) 
+        { 
+            _userManager = userManager;
+            _userRepository = userRepository;
+            _mapper = mapper;
         }
 
-        public Task<EmployeeDTO> GetEmployeeAsync(Guid userId)
+        public async Task<List<EmployeeDTO>> GetAllEmployeesAsync()
         {
-            throw new NotImplementedException();
+            var users = _userRepository.ToList();
+
+            return _mapper.Map<List<EmployeeDTO>>(users);
+        }
+
+        public async Task<EmployeeDTO> GetEmployeeByEmailAsync(string userEmail)
+        {
+            var user = await _userManager.FindByEmailAsync(userEmail)
+                ?? throw new Exception("User with current email doesn`t exist");
+
+            return _mapper.Map<EmployeeDTO>(user);
         }
     }
 }

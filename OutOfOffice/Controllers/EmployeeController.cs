@@ -9,11 +9,24 @@ namespace OutOfOffice.Controllers
     [Authorize]
     public class EmployeeController : Controller
     {
-        private readonly IEmployeeSevice _employeeService;
-        public EmployeeController(IEmployeeSevice employeeService) 
+        private readonly IEmployeeService _employeeService;
+        public EmployeeController(IEmployeeService employeeService) 
         {
             _employeeService = employeeService;
         }
 
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetAllUsersAsync()
+        {
+            var users = await _employeeService.GetAllEmployeesAsync();
+            return Ok(users);
+        }
+
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetUserByEmailAsync(string email)
+        {
+            var user = await _employeeService.GetEmployeeByEmailAsync(email);
+            return Ok(user);
+        }
     }
 }
