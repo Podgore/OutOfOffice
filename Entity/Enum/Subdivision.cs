@@ -2,6 +2,9 @@
 {
     public enum Subdivision
     {
-
+        SoftwareDevelopment,
+        InfoSec,
+        Analytics,
+        Managers
     }
 }

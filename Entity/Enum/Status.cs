@@ -2,6 +2,8 @@
 {
     public enum Status
     {
-
+        Approve,
+        Rejected,
+        New
     }
 }

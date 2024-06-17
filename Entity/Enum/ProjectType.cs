@@ -2,6 +2,8 @@
 {
     public enum ProjectType
     {
-
+        Outsource,
+        Product,
+        Outstaff 
     }
 }

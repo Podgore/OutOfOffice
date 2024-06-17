@@ -28,10 +28,10 @@ namespace OutOfOffice.BLL.Services
             return _mapper.Map<List<EmployeeDTO>>(users);
         }
 
-        public async Task<EmployeeDTO> GetEmployeeByEmailAsync(string userEmail)
+        public async Task<EmployeeDTO> GetEmployeeByIdAsync(Guid userId)
         {
-            var user = await _userManager.FindByEmailAsync(userEmail)
-                ?? throw new Exception("User with current email doesn`t exist");
+            var user = await _userRepository.FirstOrDefaultAsync(u => u.Id == userId)
+                ?? throw new Exception("User with current id doesn`t exist");
 
             return _mapper.Map<EmployeeDTO>(user);
         }

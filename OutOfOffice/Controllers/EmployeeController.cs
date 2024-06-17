@@ -23,9 +23,9 @@ namespace OutOfOffice.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetUserByEmailAsync(string email)
+        public async Task<IActionResult> GetUserByIdAsync(Guid id)
         {
-            var user = await _employeeService.GetEmployeeByEmailAsync(email);
+            var user = await _employeeService.GetEmployeeByIdAsync(id);
             return Ok(user);
         }
     }
