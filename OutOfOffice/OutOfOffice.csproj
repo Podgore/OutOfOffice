@@ -31,6 +31,7 @@
     <ProjectReference Include="..\OutOfOffice.BLL\OutOfOffice.BLL.csproj" />
     <ProjectReference Include="..\OutOfOffice.Common\OutOfOffice.Common.csproj" />
     <ProjectReference Include="..\OutOfOffice.DAL\OutOfOffice.DAL.csproj" />
+    <ProjectReference Include="..\OutOfOffice.Seeding\OutOfOffice.Seeding.csproj" />
   </ItemGroup>
 
 </Project>

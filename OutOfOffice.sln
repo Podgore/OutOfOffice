@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.DAL", "OutOfOff
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.BLL", "OutOfOffice.BLL\OutOfOffice.BLL.csproj", "{3F7652F3-481E-42DF-A8C2-DF6DF7CF3981}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.Common", "OutOfOffice.Common\OutOfOffice.Common.csproj", "{14F213DD-4444-4370-94F8-136231AC9A66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OutOfOffice.Common", "OutOfOffice.Common\OutOfOffice.Common.csproj", "{14F213DD-4444-4370-94F8-136231AC9A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutOfOffice.Seeding", "OutOfOffice.Seeding\OutOfOffice.Seeding.csproj", "{8D37DD40-A194-43C4-9C46-EFD00FF34427}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{14F213DD-4444-4370-94F8-136231AC9A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14F213DD-4444-4370-94F8-136231AC9A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14F213DD-4444-4370-94F8-136231AC9A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D37DD40-A194-43C4-9C46-EFD00FF34427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D37DD40-A194-43C4-9C46-EFD00FF34427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D37DD40-A194-43C4-9C46-EFD00FF34427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D37DD40-A194-43C4-9C46-EFD00FF34427}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

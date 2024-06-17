@@ -9,6 +9,7 @@ using OutOfOffice.BLL.Services.Interfaces;
 using OutOfOffice.BLL.Services;
 using OutOfOffice.BLL.Profiles;
 using OutOfOffice.Common.Configs;
+using OutOfOffice.Seeding.Extentions;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Identity;
 using OutOfOffice.Entity;
@@ -33,6 +34,9 @@ builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 // Service
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+
+// Seeding
+builder.Services.AddSeeding();
 
 // Identity
 builder.Services.AddIdentity<Employee, IdentityRole<Guid>>()
@@ -102,6 +106,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+await app.ApplySeedingAsync();
 
 app.UseHttpsRedirection();
 
