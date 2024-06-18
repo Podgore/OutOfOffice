@@ -16,6 +16,7 @@ namespace OutOfOffice.Controllers
         }
 
         [HttpGet("[action]")]
+        [Authorize(Roles = "HR Manager")]
         public async Task<IActionResult> GetAllUsersAsync()
         {
             var users = await _employeeService.GetAllEmployeesAsync();
@@ -23,6 +24,7 @@ namespace OutOfOffice.Controllers
         }
 
         [HttpGet("[action]")]
+        [Authorize(Roles = "HR Manager")]
         public async Task<IActionResult> GetUserByIdAsync(Guid id)
         {
             var user = await _employeeService.GetEmployeeByIdAsync(id);

@@ -68,9 +68,8 @@ namespace OutOfOffice.BLL.Services
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
 
-            //Todo: add roles for users
-            //var roles = await _userManager.GetRolesAsync(user);
-            //claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
+            var roles = await _userManager.GetRolesAsync(user);
+            claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
